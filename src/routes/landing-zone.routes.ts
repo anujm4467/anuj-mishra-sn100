@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 Since SpaceY is on a tight budget, the rovers we sent in weren't exactly high quality. One of them shared garbage coordinates, while the other one malfunctioned in the middle.
 
-After talking to NASA, however, we found that if all the coordinates shared by our first rover, R1, is includes in the list of coordinates shared by our second rover, R2, then that landing zone is good to go.
+After talking to NASA, however, we found that if all the coordinates shared by rover, R2, is includes in the list of coordinates shared by other rover, R1, then that landing zone is good to go.
 
 But again, since we were on a tight budget, we didn't exactly hire the best engineers. Your task is to fix the isValidLandingZone function in the /landing-zone/:zone endpoint to make sure that the API correctly identifies valid landing zones.
 
