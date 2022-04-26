@@ -64,15 +64,19 @@ const findShortestPath = (
 
     // for each of those child nodes:
     for (const child in children) {
-      // save the distance from the start node to the child node
-      const newdistance = distance + children[child];
-      // if there's no recorded distance from the start node to the child node in the distances object
-      // or if the recorded distance is shorter than the previously stored distance from the start node to the child node
-      if (!distances[child] || distances[child] > newdistance) {
-        // save the distance to the object
-        distances[child] = newdistance;
-        // record the path
-        parents[child] = node;
+      if (child === startNode) {
+        continue;
+      } else {
+        // save the distance from the start node to the child node
+        const newdistance = distance + children[child];
+        // if there's no recorded distance from the start node to the child node in the distances object
+        // or if the recorded distance is shorter than the previously stored distance from the start node to the child node
+        if (!distances[child] || distances[child] > newdistance) {
+          // save the distance to the object
+          distances[child] = newdistance;
+          // record the path
+          parents[child] = node;
+        }
       }
     }
     // move the current node to the visited set
